@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: markgasspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: markgasspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: markgasspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: markgasspipelinesjavascriptdocker 
+          image: mkgfastai.azurecr.io/markgasspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
